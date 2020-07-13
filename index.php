@@ -9,7 +9,7 @@ $row=mysqli_fetch_array($result);
 $name=$row['name'];
 
 //친구 추리기
-$sql="select * from account, friend_list where account._id=".$_SESSION['_id'];
+$sql="select * from account, friend_list where account._id=".$_SESSION['_id']." AND mem_id=".$_SESSION['_id'];
 $result=mysqli_query($conn,$sql);
 $friend_list='';
 
