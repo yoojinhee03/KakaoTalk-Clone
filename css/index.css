@@ -105,15 +105,3 @@ footer{
 	background-color: #fafafc;
 }
 
-@media screen and (min-width:500px) and (max-width:1920px) { 
-	.wrapper	 
-	{ 
-		display: none;
-	} 
-	.over{
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-}
-
