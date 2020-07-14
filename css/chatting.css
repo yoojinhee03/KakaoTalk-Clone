@@ -1,0 +1,154 @@
+body{
+	margin: 0;
+	/*height: 100%;*/
+}
+
+.chat-wrap div:after{ 
+	content:""; 
+	clear:both; 
+	display:block; 
+}
+
+header{
+	position: fixed;
+	top:0;
+	/*border: 1px solid gray;*/
+	width: 100%;
+	height: 70px;
+	background-color: #aabfd0;
+	/*opacity: 90%;*/
+	z-index: 1;
+	text-align: center;
+}
+#top-container .name{
+	position: absolute;
+	display: inline-block;
+	/*height: 70px;*/
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+}
+#top-container .back{
+	/*float:left;*/
+	position: absolute;
+	top:50%;
+	left: 3%;
+	
+	transform: translateY(-50%);
+
+}
+#top-container .back img{
+	-ms-transform: rotate(90deg); 
+	-webkit-transform: rotate(90deg); 
+	transform: rotate(90deg);
+}
+main{
+	margin-top:70px;
+	background-color: #aabfd0;
+	height: auto;
+	min-height: 80vh;
+}
+
+
+#chatting-container .wrap{
+	margin:5px auto;
+	width: 95%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	position: relative;
+	/*z-index: -1;*/
+
+	/*border-bottom: 1px solid #f4f3f8;*/
+}
+
+#chatting-container .profile{
+	width:50px;
+	position: absolute;
+	top:5px;
+
+	/*border: 1px solid gray;*/
+	display: inline-block;
+
+}
+ #chatting-container .profile img{
+	width:100%;
+	border-radius: 18px;
+ }
+#chatting-container .name{
+	/*border: 1px solid gray;*/
+	display: inline-block;
+	position: absolute;
+	top:20px;
+	left:55px;
+	transform: translateY(-50%);
+	margin-left: 5px;
+}
+#chatting-container .chatting,#chatting-container .mine-chatting{
+	/*border: 1px solid gray;*/
+	border-radius: 15px;
+	padding:5px 10px;
+	display: inline-block;
+	max-width: 250px;
+	word-break:break-all;
+	margin-bottom: 7px;
+}
+#chatting-container .chatting{
+	background-color: #ffffff;
+}
+.wrap .chat-wrap{
+	position: relative;
+	width: 80%;
+	left: 60px;
+	top:30px;
+}
+
+#chatting-container .mine-chatting{
+	float: right;
+	background-color: #ffeb33; 
+}
+footer{
+	position: fixed;
+	bottom:0;
+	/*border: 1px solid gray;*/
+	width: 100%;
+	height: 70px;
+	z-index: 1;
+	background-color: #ffffff;
+}
+#input-container{
+	background-color: #ffeb33; 
+	/*z-index: 1;*/
+	text-align: center;
+	/*height: 50px;*/
+
+	/*position: relative;*/
+
+}
+#input-container .text-area{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: inline-block;
+	width: 360px;
+	border: 1px solid #aaaaaa;
+	border-radius: 20px;
+	height: 35px;
+	/*border: 1px solid gray;*/
+}
+.text-area input{
+	height: 35px;
+	width: 76%;
+	border: 0;
+	/*border: 1px solid #aaaaaa;*/
+	border-radius: 20px;
+	padding: 0 10px;
+}
+input[type="submit" i]{
+	width: 45px;
+	border-radius: 20px;
+	float: right;
+	background-color: #ffeb33;
+	border: 0;
+}

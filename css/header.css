@@ -1,0 +1,38 @@
+header{
+	width:95%;
+	margin:0 auto;
+}
+#menu-container:after{ 
+	content:""; 
+	clear:both; 
+	display:block; 
+}
+#menu-container,#menu-container .title,#menu-container .menu{
+	height: 60px;
+	line-height: 60px;
+	/*border: 1px solid gray;*/
+}
+
+#menu-container .title{
+	font-size: 1.8rem;
+	/*border: 1px solid gray;*/
+	display: inline-block;
+}
+
+#menu-container .menu{
+	float:right;
+	/*border: 1px solid gray;*/
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+li {
+	display: inline-block;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+}

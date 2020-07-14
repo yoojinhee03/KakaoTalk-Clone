@@ -1,0 +1,60 @@
+main{
+	width:95%;
+	margin:0 auto;
+	/*border: 1px solid gray;*/
+}
+.wrapper:after{ 
+	content:""; 
+	clear:both; 
+	display:block; 
+}
+
+#list-container .list{
+	margin:5px auto;
+	position: relative;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/*border-bottom: 1px solid #f4f3f8;*/
+}
+
+#list-container .title{
+	font-size: 1rem;
+	color: #aaaaaa;
+}
+#list-container .myProfile{
+	width:70px;
+	/*border: 1px solid gray;*/
+	display: inline-block;
+
+	/*border-radius: 20px;*/
+}
+#list-container .profile{
+	width:60px;
+	/*border: 1px solid gray;*/
+	display: inline-block;
+
+}
+
+#list-container .myProfile img{
+	width:100%;
+	border-radius: 25px;
+
+}
+ #list-container .profile img{
+	width:100%;
+	border-radius: 22px;
+ }
+
+#list-container .myName{
+	font-size: 1.2rem;
+}
+#list-container .myName,#list-container .name{
+	/*border: 1px solid gray;*/
+	display: inline-block;
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	margin-left: 5px;
+}
+
+/*채팅방 리스트*/
