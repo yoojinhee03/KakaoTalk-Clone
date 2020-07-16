@@ -38,7 +38,7 @@ $target_mem_name=$row['name'];
 				<div class="name"><?=$target_mem_name?></div>
 			</div>
 		</header>
-		<main>
+		<main id="main">
 			<div id="chatting-container">
 				<div class="wrap">
 					<!-- <div class="profile"><img src="images/profile.jpg" alt=""></div>

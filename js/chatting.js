@@ -26,7 +26,7 @@ var chatManager = new function(){
 			//debugger;
 			// JSON 포맷으로 Parsing
 			// 인자로 전달된 문자열을 자바스크립트의 데이터로 변환
-			console.log("xmlHttp.responseText : "+xmlHttp.responseText); 
+			// console.log("xmlHttp.responseText : "+xmlHttp.responseText); 
 			//console.log(JSON.parse(xmlHttp.responseText));
 			
 			res = JSON.parse(xmlHttp.responseText);
@@ -34,7 +34,7 @@ var chatManager = new function(){
 
 			// 채팅내용 보여주기
 			chatManager.show(res.data);
-			//console.log("date = " + res.date);
+			console.log("date = " + res.date);
 			//console.log("date" + res.data[i].name);
 			//console.log("date" + res.data[i].msg);
 			// 중복실행 방지 플래그 OFF
@@ -74,8 +74,8 @@ var chatManager = new function(){
 	this.show = function(data)
 	{
 		// console.log("Show 함수 들어옴");
-
-		var chattingContainer = document.getElementById('chatting-container');
+		var textCnt=0;
+		var chattingContainer = document.getElementById('main');
 		var chatWrap = document.getElementsByClassName('chat-wrap')[0];
 		var wrap = document.getElementsByClassName('wrap')[0];
 
@@ -89,13 +89,13 @@ var chatManager = new function(){
 			div=chatWrap.appendChild(document.createElement('div'));
 			chatting=div.appendChild(document.createElement('div'));
 			if(user_ID!=data[i].user_id){
-				var profile=wrap.appendChild(document.createElement('div'));
-				profile.className="profile";
-				var img=profile.appendChild(document.createElement('img'));
-				img.src="images/profile.jpg";
-				var name= wrap.appendChild(document.createElement('div'));
-				name.className="name";
-				name.innerText=data[i].name;
+				// var profile=wrap.appendChild(document.createElement('div'));
+				// profile.className="profile";
+				// var img=profile.appendChild(document.createElement('img'));
+				// img.src="images/profile.jpg";
+				// var name= wrap.appendChild(document.createElement('div'));
+				// name.className="name";
+				// name.innerText=data[i].name;
 				chatting.className="chatting";
 			}else{
 				chatting.className="mine-chatting";
@@ -113,7 +113,10 @@ var chatManager = new function(){
 		}
 
 		// 가장 아래로 스크롤
-		chattingContainer.scrollTop = chattingContainer.scrollHeight;
+		if(data.length!=textCnt){
+			chattingContainer.scrollTop = chattingContainer.scrollHeight;
+		}
+		textCnt=data.length;
 	}
 
 	// 채팅내용 작성하기

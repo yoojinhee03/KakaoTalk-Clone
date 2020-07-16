@@ -44,14 +44,16 @@ header{
 	transform: rotate(90deg);
 }
 main{
+	overflow-y		: scroll;
 	margin-top:70px;
 	background-color: #aabfd0;
-	height: auto;
+	height: 500px;
 	min-height: 80vh;
 }
 
 
 #chatting-container .wrap{
+
 	margin:5px auto;
 	width: 95%;
 	padding-top: 5px;
@@ -97,9 +99,12 @@ main{
 	background-color: #ffffff;
 }
 .wrap .chat-wrap{
+
 	position: relative;
-	width: 80%;
-	left: 60px;
+	width: 90%;
+	/*display: inline-block;*/
+	left: 50%;
+	transform: translateX(-50%);
 	top:30px;
 }
 

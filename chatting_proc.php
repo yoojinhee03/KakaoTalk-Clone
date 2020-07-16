@@ -6,7 +6,7 @@ $db->query('SET NAMES utf8');
 
 if($_GET['first']=='true')
 {	
-	// $res = $db->query('SELECT chat._id,user_id,msg,date,chat_group_id,name FROM chat,account where chat_group_id='.$_GET['id']).' && user_id=account._id group by chat._id';
+// 	// $res = $db->query('SELECT chat._id,user_id,msg,date,chat_group_id,name FROM chat,account where chat_group_id='.$_GET['id']).' && user_id=account._id group by chat._id';
 	$res = $db->query('SELECT * FROM chat where chat_group_id='.$_GET['id']);
 }
 else{

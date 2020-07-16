@@ -29,8 +29,8 @@ if(isset($_POST['id'])){
 		';
 	}else{
 		if($id==$_SESSION['_id']){
-			$info='';
-			$go='나와의 채팅';
+			$info='본인 계정입니다.';
+			// $go='나와의 채팅';
 		}else{
 			$sql="select * from account,friend_list where id like '".$_POST['id']."@%' and target_mem_id=account._id and mem_id=".$_SESSION['_id'];
 			$result=mysqli_query($conn,$sql);
@@ -39,7 +39,7 @@ if(isset($_POST['id'])){
 
 			if($row){
 				$info='이미 등록된 친구입니다.';
-				$go="1:1 채팅";
+				// $go="1:1 채팅";
 			}else{
 				$row['name']=$name;
 				$info='';
