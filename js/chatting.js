@@ -9,6 +9,7 @@ var chatManager = new function(){
 	var user_ID          = -1;
 
 	var mine = false;//자신인지 아닌지 구분
+	var first= true;
 
 	this.setId= function(chat_group_id,user_id){
 		chat_group_ID=chat_group_id;
@@ -25,12 +26,12 @@ var chatManager = new function(){
 			//debugger;
 			// JSON 포맷으로 Parsing
 			// 인자로 전달된 문자열을 자바스크립트의 데이터로 변환
-			// console.log("xmlHttp.responseText : "+xmlHttp.responseText); 
+			console.log("xmlHttp.responseText : "+xmlHttp.responseText); 
 			//console.log(JSON.parse(xmlHttp.responseText));
 			
 			res = JSON.parse(xmlHttp.responseText);
 			finalDate = res.date;
-			
+
 			// 채팅내용 보여주기
 			chatManager.show(res.data);
 			//console.log("date = " + res.date);
@@ -56,17 +57,28 @@ var chatManager = new function(){
 		// console.log(chat_group_id);
 		
 		// Ajax 통신
-		xmlHttp.open("GET", "chatting_proc.php?id="+chat_group_ID+"&date=" + encodeURIComponent(finalDate), true);
+		//if(first){
+			// console.log("처음");
+			// xmlHttp.open("GET", "chatting_proc.php?id="+chat_group_ID, true);
+			xmlHttp.open("GET", "chatting_proc.php?id="+chat_group_ID+"&date=" + encodeURIComponent(finalDate)+"&first="+first, true);
+			first=false;
+		// }else{
+		// 	console.log("처음X");
+
+		// 	xmlHttp.open("GET", "chatting_proc.php?id="+chat_group_ID+"&date=" + encodeURIComponent(finalDate)+"&first=false", true);
+		// }
 		xmlHttp.send();
 	}
 
 	// 채팅내용 보여주기
 	this.show = function(data)
 	{
-		console.log("Show 함수 들어옴");
+		// console.log("Show 함수 들어옴");
 
 		var chattingContainer = document.getElementById('chatting-container');
 		var chatWrap = document.getElementsByClassName('chat-wrap')[0];
+		var wrap = document.getElementsByClassName('wrap')[0];
+
 		var div;
 		// chat-wrap
 		var dt, chatting;//이름,메세지
@@ -77,19 +89,26 @@ var chatManager = new function(){
 			div=chatWrap.appendChild(document.createElement('div'));
 			chatting=div.appendChild(document.createElement('div'));
 			if(user_ID!=data[i].user_id){
+				var profile=wrap.appendChild(document.createElement('div'));
+				profile.className="profile";
+				var img=profile.appendChild(document.createElement('img'));
+				img.src="images/profile.jpg";
+				var name= wrap.appendChild(document.createElement('div'));
+				name.className="name";
+				name.innerText=data[i].name;
 				chatting.className="chatting";
 			}else{
 				chatting.className="mine-chatting";
 			}
 			
 			chatting.innerText=data[i].msg;
-			console.log("for문 들어옴");
+			// console.log("for문 들어옴");
 
 			// dt = document.createElement('dt');
 			// dt.appendChild(document.createTextNode(data[i].name));
 			// chattingContainer.appendChild(dt);
-			console.log("date[].name : "+data[i].user_id);
-			console.log("date[].msg : "+data[i].msg);
+			// console.log("date[].name : "+data[i].user_id);
+			// console.log("date[].msg : "+data[i].msg);
 
 		}
 

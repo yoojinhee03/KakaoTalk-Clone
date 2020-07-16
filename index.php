@@ -42,7 +42,7 @@ while($row=mysqli_fetch_array($result)){
 	<link href="css/list.css" rel="stylesheet">
 	<link href="css/footer.css" rel="stylesheet">
 	<link href="css/mediaQuery.css" rel="stylesheet">
-
+	<script src="js/index.js"></script>
 	<!-- -->
 </head>
 <body>
@@ -53,6 +53,9 @@ while($row=mysqli_fetch_array($result)){
 		<?php  
 			require_once("lib/header.php");
 		?>
+		<div id="follow-list" style="display: none">
+				
+		</div>
 		<main>
 			<div id="list-container">
 				<div class="list" style="border-bottom: 1px solid #f4f3f8;">
@@ -65,7 +68,7 @@ while($row=mysqli_fetch_array($result)){
 					<div class="name">홍길동</div>
 				</div> -->
 				<?=$friend_list?>
-				<hr style="border: solid 1px #f4f3f8;">
+				<hr style="border: 0;border-bottom: 1px solid #f4f3f8;">
 			</div>
 		</main>
 		<?php  

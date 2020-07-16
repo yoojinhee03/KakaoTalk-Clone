@@ -18,12 +18,15 @@ $chat_list='';
 // }
 
 //친구목록에 없는 사람에게 채팅이 왔을때
-$sql="select distinct friend_list._id from friend_list,chat where mem_id=".$_SESSION['_id']." or target_mem_id=".$_SESSION['_id'];
+// $sql="select distinct friend_list._id,count(*) from friend_list,chat where mem_id=".$_SESSION['_id']." or target_mem_id=".$_SESSION['_id'];
+$sql="select chat_group_id,count(*) from chat,friend_list where mem_id=".$_SESSION['_id']." or target_mem_id=".$_SESSION['_id']." group by chat_group_id";
 $result=mysqli_query($conn,$sql);
 print_r(mysqli_error($conn));
 $chat_list='';	
+
 while($row=mysqli_fetch_array($result)){
-	$sql="select * from friend_list where _id=".$row['_id'];
+	// print_r($row);
+	$sql="select * from friend_list where _id=".$row['chat_group_id'];
 	$chat_result=mysqli_query($conn,$sql);
 	$chat_row=mysqli_fetch_array($chat_result);
 	if($chat_row['target_mem_id']==$_SESSION['_id']){
@@ -35,7 +38,7 @@ while($row=mysqli_fetch_array($result)){
 	$chat_result=mysqli_query($conn,$sql);
 	$chat_row=mysqli_fetch_array($chat_result);
 	$chat_list=$chat_list.
-	'<div class="list" onclick="location.href=\'chatting.php?id='.$row['_id'].'\'">
+	'<div class="list" onclick="location.href=\'chatting.php?id='.$row['chat_group_id'].'\'">
 		<div class="profile"><img src="images/profile.jpg" alt="프로필"></div>
 		<div class="name">'.$chat_row['name'].'</div>
 	</div>';

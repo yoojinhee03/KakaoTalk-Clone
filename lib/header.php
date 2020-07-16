@@ -3,10 +3,9 @@
 		<div class="title"><?=$title?></div>
 		<div class="menu">
 			<ul>
-				<li><a href="">o</a></li>
-				<li><a href="follow.html">추가</a></li>
-				<li><a href="">o</a></li>
-				<li><a href="">o</a></li>
+				<li><a href=""><div class="icon"><img src="./images/find.png" alt=""></div></a></li>
+				<li><a href="#" onclick="showFollowList()"><div class="icon"><img src="./images/follow.png" alt=""></div></a></li>
+				<!-- <li><a href=""><div class="icon"><img src="./images/follow.png" alt=""></div></a></li> -->
 			</ul>
 		</div>
 	</div>

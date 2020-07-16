@@ -22,7 +22,7 @@ $target_mem_name=$row['name'];
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title><?=$target_mem_name?></title>
 	<link href="css/mediaQuery.css" rel="stylesheet">
 	<link href="css/chatting.css" rel="stylesheet">
 	<script type="text/javascript" src="js/chatting.js"></script>
@@ -41,8 +41,8 @@ $target_mem_name=$row['name'];
 		<main>
 			<div id="chatting-container">
 				<div class="wrap">
-					<div class="profile"><img src="images/profile.jpg" alt=""></div>
-					<div class="name"><?=$target_mem_name?></div>
+					<!-- <div class="profile"><img src="images/profile.jpg" alt=""></div>
+					<div class="name"><?=$target_mem_name?></div> -->
 					<div class="chat-wrap">
 						<!-- <div>
 							<div class="chatting">ssdddddd</div>

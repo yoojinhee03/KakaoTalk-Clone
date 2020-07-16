@@ -15,7 +15,12 @@ footer{
 	border-top: 1px solid #f4f3f8;
 	background-color: #fafafc;
 }
-
+footer .icon{
+	width:35px;
+}
+.icon img{
+	width:100%;
+}
 footer ul li{
 	margin:0 30px;
 }
