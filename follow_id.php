@@ -84,22 +84,27 @@ if(isset($_POST['id'])){
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>카카오톡 ID로 추가</title>
+	<title>까까오톡 ID로 추가</title>
 	<link href="css/follow_id.css" rel="stylesheet">
+	<link href="css/mediaQuery.css" rel="stylesheet">
+	
 	<script src="js/follow.js"></script>
 </head>
 <body>
+	<?php  
+		require_once("lib/over.php");
+	?>
 	<div class="wrapper">
 		<div id="top-container">
 			<div class="close"><a href="index.php"><img src="https://img.icons8.com/ios/48/000000/multiply.png"/></a></div>
 			<div class="title">
-				카카오톡 ID로 추가
+				까까오톡 ID로 추가
 			</div>
 		</div>
 		<main>
 			<div id="find-container">
 				<form action="follow_id.php" method="post" name="findFrm">
-					<input type="text" name="id" maxlength="20" placeholder="친구 카카오톡 ID (20글자 이내)" onkeypress="JavaScript:press(this.form)">
+					<input type="text" name="id" maxlength="20" placeholder="친구 까까오톡 ID (20글자 이내)" onkeypress="JavaScript:press(this.form)">
 				</form>
 			</div>
 			 <?=$show?>

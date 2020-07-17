@@ -53,9 +53,13 @@ while($row=mysqli_fetch_array($result)){
 	<link href="css/header.css" rel="stylesheet">
 	<link href="css/chat_group.css" rel="stylesheet">
 	<link href="css/list.css" rel="stylesheet">
+	<link href="css/mediaQuery.css" rel="stylesheet">
 	<link href="css/footer.css" rel="stylesheet">
 </head>
 <body>
+	<?php  
+		require_once("lib/over.php");
+	?>
 	<div class="wrapper">
 		<?php  
 			require_once("lib/header.php");

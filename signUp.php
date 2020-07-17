@@ -4,8 +4,12 @@
 	<meta charset="UTF-8">
 	<title>회원가입</title>
   	<link href="css/infoInput.css" rel="stylesheet">
+    <link href="css/mediaQuery.css" rel="stylesheet">
 </head>
 <body>
+  <?php  
+    require_once("lib/over.php");
+  ?>
 	<div class="wrapper">
     <header>
       <div id="top-container">
